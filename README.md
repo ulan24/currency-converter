@@ -34,13 +34,10 @@ A simple and intuitive **Currency Converter** app built with **React** +  **Vite
 
 ## 🌐 Live Demo
 
-🔗 [Live App](your-live-demo-url.com)  
+🔗 [Live App](https://ulan-currency-converter.netlify.app/)  
 
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to fork this repo, open issues, or submit pull requests.  
 
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
