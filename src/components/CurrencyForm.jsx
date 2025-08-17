@@ -16,16 +16,7 @@ const CurrencyForm = () => {
     };
 
     const getExchangeRate = async () => {
-        // Debug: Check all environment variables
-        console.log("All environment variables:", import.meta.env);
-        console.log("VITE_API_KEY:", import.meta.env.VITE_API_KEY);
-        console.log("REACT_APP_API_KEY:", import.meta.env.REACT_APP_API_KEY);
-        
         const API_KEY = import.meta.env.VITE_API_KEY;
-
-        // Debug: Check if API key is available
-        console.log("API Key available:", !!API_KEY);
-        console.log("API Key length:", API_KEY ? API_KEY.length : 0);
 
         if (!API_KEY) {
             setError("API key not found. Please check your environment variables.");
@@ -38,7 +29,6 @@ const CurrencyForm = () => {
         setError("");
 
         try {
-            console.log("Making API request to:", API_URL.replace(API_KEY, "***"));
             const response = await fetch(API_URL);
 
             if (!response.ok) {
@@ -46,7 +36,6 @@ const CurrencyForm = () => {
             }
 
             const data = await response.json();
-            console.log("API Response:", data);
 
             if (data.result === "error") {
                 throw new Error(data["error-type"] || "API Error");
@@ -56,7 +45,6 @@ const CurrencyForm = () => {
             const resultText = `${amount} ${fromCurrency} = ${rate.toFixed(2)} ${toCurrency}`;
             setResult(resultText);
         } catch (error) {
-            console.error("Exchange rate error:", error);
             setError(`Failed to get exchange rate: ${error.message}`);
             setResult("");
         } finally {
