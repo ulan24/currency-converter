@@ -18,8 +18,8 @@ const currencyCodes = [
     "ZWL"
 ];
 
-const CurrencySelect = ({selectedCurrency, handleCurrency}) => {
-    const countryCode = selectedCurrency.slice(0,2);
+const CurrencySelect = ({ selectedCurrency, handleCurrency }) => {
+    const countryCode = selectedCurrency.slice(0, 2);
 
     return (
         <div className="currency-select">
